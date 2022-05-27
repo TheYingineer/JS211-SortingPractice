@@ -109,21 +109,38 @@ const strNums = ["1","4","1","5","9","2","6","5","3","5","8","9","7","9","3","2"
 //reference:  https://dev.to/shrihankp/higher-order-array-methods-in-javascript-14e7
 // higher order sorting method: flatmap 
 const wsn = weather.flatMap(callback => weather.map(w =>w.weather_state_name));
-
 console.log(wsn)
 
+
+let array = []; 
+function weatherSN () {
+for(let i = 0; i< weather.length; i++){
+  array.push(weather[i].weather_state_name) 
+  }
+return array
+}
+console.log("your new weather State name Old fashion loop here: ", weatherSN())
 
 
 
   //find the id of the object in weather that has a min_temp of 15.915
 
-   //reference: https://dev.to/shrihankp/higher-order-array-methods-in-javascript-14e7
+  // reference: https://dev.to/shrihankp/higher-order-array-methods-in-javascript-14e7
   // higher order sorthing method: filter
-
-
   const idealTemp = weather.filter(({min_temp}) => min_temp === 15.915); 
-
   console.log(idealTemp)
 
 
+  let array2 = []; 
+  function minTemp () {
+    for(let j = 0; j<weather.length; j++){
+      if(weather[j].min_temp === 15.915){
+        return weather[j].id
+      }
+    }
+  }
+
+  console.log("you Old fashion way using filter: ", minTemp())
+
+  
 
